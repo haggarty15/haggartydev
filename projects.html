@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Kyle Haggarty</title>
+  <meta name="description" content="Kyle Haggarty's project portfolio — current work, progress and next steps." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">kyle<span>.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <div class="hero" style="padding-bottom:2rem;">
+    <div class="hero-tag">Open Source &amp; Side Projects</div>
+    <h1>My <span class="highlight">Projects</span></h1>
+    <p class="hero-sub">
+      A collection of things I've built, am building, or plan to build. Everything from automation scripts to full-stack apps.
+    </p>
+  </div>
+
+  <!-- PROJECTS GRID -->
+  <section style="padding-top:1rem;">
+    <div class="projects-grid">
+
+      <!-- ksh_mon -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🖥️</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/ksh_mon" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">ksh_mon</div>
+        <div class="project-desc">A highly configurable PC monitoring app for tracking system metrics. Built in Python with a focus on personal customisability.</div>
+        <div class="project-meta">
+          <span class="project-status status-active">● Active</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Monitoring</span>
+            <span class="project-tag">Desktop</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Add alert thresholds and notification support. Explore a web dashboard view.</p>
+        </div>
+      </div>
+
+      <!-- wow_companion -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">⚔️</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/wow_companion" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">WoW Companion</div>
+        <div class="project-desc">An AI companion for World of Warcraft sessions. Understands gear, Mythic+ and raid goals to give personalised advice during play.</div>
+        <div class="project-meta">
+          <span class="project-status status-wip">◐ In Progress</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">AI / LLM</span>
+            <span class="project-tag">Gaming</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Integrate live WoW API data. Build a lightweight UI overlay for in-game use.</p>
+        </div>
+      </div>
+
+      <!-- beatsforrunning -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🎵</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/beatsforrunning" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">Beats for Running</div>
+        <div class="project-desc">Curates music playlists matched to your running cadence (BPM). Analyses tempo of tracks and aligns them to target steps-per-minute.</div>
+        <div class="project-meta">
+          <span class="project-status status-active">● Active</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Music</span>
+            <span class="project-tag">Running</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Add Spotify integration for automatic playlist creation based on BPM targets.</p>
+        </div>
+      </div>
+
+      <!-- jigsaw-solver -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🧩</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/jigsaw-solver" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">Jigsaw Solver</div>
+        <div class="project-desc">Computer vision approach to solving jigsaw puzzles. Uses image analysis to match and place pieces automatically.</div>
+        <div class="project-meta">
+          <span class="project-status status-wip">◐ In Progress</span>
+          <div class="project-tags">
+            <span class="project-tag">Kotlin</span>
+            <span class="project-tag">Computer Vision</span>
+            <span class="project-tag">Mobile</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Improve piece matching accuracy and add a real-time camera mode for live solving.</p>
+        </div>
+      </div>
+
+      <!-- asset-factory -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🏭</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/asset-factory" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">Asset Factory</div>
+        <div class="project-desc">A Python tool for generating and managing digital assets programmatically. Automates repetitive asset creation workflows.</div>
+        <div class="project-meta">
+          <span class="project-status status-wip">◐ In Progress</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Automation</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Extend with plugin system to support additional asset types and output formats.</p>
+        </div>
+      </div>
+
+      <!-- cloud-gallery -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">📷</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/cloud-gallery" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">Cloud Gallery</div>
+        <div class="project-desc">An image gallery app with cloud storage backend. Upload, organise and share photos through a clean web interface.</div>
+        <div class="project-meta">
+          <span class="project-status status-wip">◐ In Progress</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Cloud</span>
+            <span class="project-tag">Web</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Add album organisation, sharing links, and mobile-responsive UI improvements.</p>
+        </div>
+      </div>
+
+      <!-- tefty -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🔧</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/tefty" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">tefty</div>
+        <div class="project-desc">A Python utility project. Lightweight tooling for scripting and automation tasks.</div>
+        <div class="project-meta">
+          <span class="project-status status-wip">◐ In Progress</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Tooling</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Flesh out core utility functions and publish to PyPI for easy reuse.</p>
+        </div>
+      </div>
+
+      <!-- vending-machine -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">⛓️</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/vending-machine" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">Smart Contract Vending Machine</div>
+        <div class="project-desc">A Web3 vending machine implemented as an Ethereum smart contract. An exploration of Solidity and on-chain logic.</div>
+        <div class="project-meta">
+          <span class="project-status status-archived">○ Archived</span>
+          <div class="project-tags">
+            <span class="project-tag">Solidity</span>
+            <span class="project-tag">Web3</span>
+            <span class="project-tag">Ethereum</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Notes</div>
+          <p>Learning project exploring smart contract fundamentals. May revisit with a UI.</p>
+        </div>
+      </div>
+
+      <!-- Signup-CRUD -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">👤</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/Signup-CRUD" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">Signup CRUD</div>
+        <div class="project-desc">A full-stack sign-up system with React JS frontend, C# RESTful API and database persistence. A classic CRUD learning project.</div>
+        <div class="project-meta">
+          <span class="project-status status-archived">○ Archived</span>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">REST API</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Notes</div>
+          <p>Foundational full-stack project demonstrating end-to-end CRUD across the stack.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Kyle Haggarty · <a href="https://haggarty.dev">haggarty.dev</a></p>
+  </footer>
+
+</body>
+</html>
