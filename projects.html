@@ -59,31 +59,6 @@
         </div>
       </div>
 
-      <!-- youtube-pipeline -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">📺</span>
-          <div class="project-links">
-            <a href="https://github.com/haggarty15/agentic-core/tree/main/youtube_pipeline" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </div>
-        <div class="project-name">AI YouTube Pipeline</div>
-        <div class="project-desc">A semi-automated content pipeline for a tech channel. Orchestrated via n8n to automate topic sourcing, scripting, TTS narration, video editing (FFmpeg), and captions.</div>
-        <div class="project-meta">
-          <span class="project-status status-wip">💡 In Ideation</span>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">n8n</span>
-            <span class="project-tag">FFmpeg / Audio</span>
-            <span class="project-tag">Automation</span>
-          </div>
-        </div>
-        <div class="project-next">
-          <div class="project-next-label">Next Steps</div>
-          <p>Complete YouTube OAuth publishing client integration and optimize script rendering pacing.</p>
-        </div>
-      </div>
-
       <!-- greenbrook -->
       <div class="project-card">
         <div class="project-header">
@@ -92,67 +67,46 @@
             <a href="https://github.com/haggarty15/greenbrook" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
-        <div class="project-name">Greenbrook Architecture</div>
-        <div class="project-desc">Technical architecture and MVP blueprints for a sustainability-focused digital asset management platform supporting portfolio valuation and historical modeling.</div>
+        <div class="project-name">Greenbrook</div>
+        <div class="project-desc">Originally architected and hand-coded as an MVP for a sustainability-focused digital asset management platform (portfolio valuation, risk modeling) — pitched to investors. Since rebuilt on modern agentic AI tooling: a RAG pipeline on Google Cloud Storage, fine-tuned on Gemini 2.5 Flash, abstracted into a versioned, testable skills/agents repo with evals running in CI/CD as a release gate.</div>
         <div class="project-meta">
           <span class="project-status status-active">● Active</span>
           <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">RAG</span>
+            <span class="project-tag">AI/LLMs</span>
+            <span class="project-tag">Evals</span>
             <span class="project-tag">Architecture</span>
-            <span class="project-tag">Cloud-Native</span>
-            <span class="project-tag">Systems Design</span>
           </div>
         </div>
         <div class="project-next">
           <div class="project-next-label">Next Steps</div>
-          <p>Initialize Infrastructure-as-Code modules and begin service template generation.</p>
+          <p>Extract the eval/governance pipeline as a standalone developer tool.</p>
         </div>
       </div>
 
-      <!-- ksh_mon -->
+      <!-- telegram-assistant -->
       <div class="project-card">
         <div class="project-header">
-          <span class="project-icon">🖥️</span>
+          <span class="project-icon">💬</span>
           <div class="project-links">
-            <a href="https://github.com/haggarty15/ksh_mon" target="_blank" rel="noopener">GitHub ↗</a>
+            <!-- No public repo link specified in brief, can link generally to github profile -->
+            <a href="https://github.com/haggarty15" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </div>
-        <div class="project-name">ksh_mon</div>
-        <div class="project-desc">A highly configurable PC monitoring app for tracking system metrics. Built in Python with a focus on personal customisability.</div>
+        <div class="project-name">Telegram LLM Assistant</div>
+        <div class="project-desc">A personal n8n workflow connecting Telegram to an LLM as a general-purpose assistant for daily use. Hands-on implementation of webhook models and async response patterns.</div>
         <div class="project-meta">
-          <span class="project-status status-active">● Active</span>
+          <span class="project-status status-active">● Deployed</span>
           <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Monitoring</span>
-            <span class="project-tag">Desktop</span>
+            <span class="project-tag">n8n</span>
+            <span class="project-tag">Automation</span>
+            <span class="project-tag">LLM Integration</span>
           </div>
         </div>
         <div class="project-next">
           <div class="project-next-label">Next Steps</div>
-          <p>Add alert thresholds and notification support. Explore a web dashboard view.</p>
-        </div>
-      </div>
-
-      <!-- wow_companion -->
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-icon">⚔️</span>
-          <div class="project-links">
-            <a href="https://github.com/haggarty15/wow_companion" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </div>
-        <div class="project-name">WoW Companion</div>
-        <div class="project-desc">An AI companion for World of Warcraft sessions. Understands gear, Mythic+ and raid goals to give personalised advice during play.</div>
-        <div class="project-meta">
-          <span class="project-status status-wip">◐ In Progress</span>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">AI / LLM</span>
-            <span class="project-tag">Gaming</span>
-          </div>
-        </div>
-        <div class="project-next">
-          <div class="project-next-label">Next Steps</div>
-          <p>Integrate live WoW API data. Build a lightweight UI overlay for in-game use.</p>
+          <p>Add persistent memory and multi-user support.</p>
         </div>
       </div>
 
@@ -182,6 +136,62 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ALSO BUILDING -->
+  <section style="border-top:1px solid var(--border); padding-top:2rem;">
+    <div class="section-title" style="margin-bottom:1.5rem;">Also Building</div>
+    <div class="projects-grid">
+
+      <!-- wow_companion -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">⚔️</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/wow_companion" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">WoW Companion</div>
+        <div class="project-desc">An AI companion for World of Warcraft sessions. Understands gear, Mythic+ and raid goals to give personalised advice during play.</div>
+        <div class="project-meta">
+          <span class="project-status status-wip">◐ In Progress</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">AI / LLM</span>
+            <span class="project-tag">Gaming</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Integrate live WoW API data. Build a lightweight UI overlay for in-game use.</p>
+        </div>
+      </div>
+
+      <!-- ksh_mon -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">🖥️</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/ksh_mon" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">ksh_mon</div>
+        <div class="project-desc">A highly configurable PC monitoring app for tracking system metrics. Built in Python with a focus on personal customisability.</div>
+        <div class="project-meta">
+          <span class="project-status status-active">● Active</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Monitoring</span>
+            <span class="project-tag">Desktop</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Add alert thresholds and notification support. Explore a web dashboard view.</p>
+        </div>
+      </div>
+
       <!-- asset-factory -->
       <div class="project-card">
         <div class="project-header">
@@ -202,6 +212,31 @@
         <div class="project-next">
           <div class="project-next-label">Next Steps</div>
           <p>Extend with plugin system to support additional asset types and output formats.</p>
+        </div>
+      </div>
+
+      <!-- youtube-pipeline -->
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-icon">📺</span>
+          <div class="project-links">
+            <a href="https://github.com/haggarty15/agentic-core/tree/main/youtube_pipeline" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+        <div class="project-name">AI YouTube Pipeline</div>
+        <div class="project-desc">A semi-automated content pipeline for a tech channel. Orchestrated via n8n to automate topic sourcing, scripting, TTS narration, video editing (FFmpeg), and captions.</div>
+        <div class="project-meta">
+          <span class="project-status status-wip">💡 In Ideation</span>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">n8n</span>
+            <span class="project-tag">FFmpeg / Audio</span>
+            <span class="project-tag">Automation</span>
+          </div>
+        </div>
+        <div class="project-next">
+          <div class="project-next-label">Next Steps</div>
+          <p>Complete YouTube OAuth publishing client integration and optimize script rendering pacing.</p>
         </div>
       </div>
 
