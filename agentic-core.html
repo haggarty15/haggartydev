@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic Core — Kyle Haggarty</title>
+  <meta name="description" content="Agentic Core — a governance layer for multi-agent software delivery: structured human checkpoints, composable domain skills, and a self-improving correction loop." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">haggarty<span>.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="projects.html">Projects</a> / <span class="current">Agentic Core</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Agentic Core — AI Engineering</div>
+    <h1>Multi-agent AI builds fast.<br />The hard part is <span class="highlight">governance</span>.</h1>
+    <p class="hero-sub">
+      Agentic Core is an agent governance layer for software delivery — structured human checkpoints, domain-specific
+      skills, and a self-improving correction loop that stops the same mistake from repeating across sprints.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/haggarty15/agentic-core" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+      <a href="#how-it-works" class="btn btn-outline">See how it works</a>
+    </div>
+    <div class="skills-list" style="margin-top:2rem;">
+      <span class="skill-tag tag-product">Human-in-the-Loop</span>
+      <span class="skill-tag tag-ai">Multi-agent SDLC</span>
+      <span class="skill-tag tag-backend">BDD Traceability</span>
+      <span class="skill-tag tag-ai">Self-healing</span>
+      <span class="skill-tag tag-ai">Skill refinement</span>
+      <span class="skill-tag tag-product">Rubric evaluation</span>
+    </div>
+  </div>
+
+  <!-- VALUE PROPOSITIONS -->
+  <section id="value">
+    <div class="section-label">Why It Exists</div>
+    <div class="section-title" style="margin-bottom:1rem;">What you actually get</div>
+    <p class="lead">Four things a framework alone doesn't hand you: a decision record, a memory for mistakes,
+      portable domain knowledge, and a cost curve that doesn't punish rigor.</p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-stat">8 gates</div>
+        <h3>Nothing ships without a decision</h3>
+        <p>Every phase transition needs a human APPROVE / REJECT / DECIDE, recorded to <code>EVIDENCE.md</code>.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-stat">2+ per sprint</div>
+        <h3>The same mistake can't repeat</h3>
+        <p>Two recurring corrections in a sprint become a proposed <code>SKILL.md</code> rule before the next ticket runs.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-stat">per role &amp; domain</div>
+        <h3>Knowledge lives in the agents</h3>
+        <p>Composable <code>SKILL.md</code> files carry the rules — not tribal knowledge stuck in one person's head.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-stat">40–60% cheaper</div>
+        <h3>Judgment where it counts</h3>
+        <p>Model tiering runs mechanical roles on Haiku and judgment roles on Sonnet, without touching decision quality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="section-label">The Problem</div>
+    <div class="section-title" style="margin-bottom:1rem;">Frameworks give you orchestration. Nobody gives you correctness.</div>
+    <p class="lead">CrewAI and AutoGen solve a real problem: how do multiple AI agents hand work between each other?
+      But they stop there. Everything else — quality gates, domain knowledge, human oversight, and correction loops
+      — is your problem.</p>
+
+    <div class="gap-grid">
+      <div class="gap-cell have">
+        <div class="gap-cell-label have">What they give you</div>
+        <h3>CrewAI / AutoGen</h3>
+        <ul class="gap-list">
+          <li>Agent-to-agent message passing</li>
+          <li>Sequential and parallel task execution</li>
+          <li>Tool use and memory primitives</li>
+          <li>Python runtime, SDK integrations</li>
+        </ul>
+      </div>
+      <div class="gap-cell missing">
+        <div class="gap-cell-label missing">What they leave out</div>
+        <h3>The governance gap</h3>
+        <ul class="gap-list">
+          <li>Quality gates and rubric evaluation</li>
+          <li>Structured human-in-the-loop checkpoints</li>
+          <li>Domain skill composition per agent role</li>
+          <li>Correction feedback into agent behaviour</li>
+          <li>Evidence trail for human oversight audit</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="thesis-box">
+      <strong>Agentic Core is the governance layer that sits on top of any execution runtime</strong> — it defines
+      what each agent should know, when the human must intervene, and how failures feed back to prevent recurrence.
+      The execution engine (Claude Code, Gemini, any LLM) is pluggable.
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section id="how-it-works">
+    <div class="section-label">How It Works</div>
+    <div class="section-title" style="margin-bottom:1rem;">Eight gates. Every handoff is a checkpoint.</div>
+    <p class="lead">Agents don't pass work directly to each other. Every phase produces output, emits a structured
+      checkpoint, and waits for a human APPROVE / REJECT / DECIDE before the next phase runs. The human acts at
+      gates — never mid-phase.</p>
+
+    <div class="flow-wrap">
+      <div class="flow">
+        <div class="flow-phase">
+          <div class="flow-bubble">PO</div>
+          <div class="flow-sub">BDD feature</div>
+        </div>
+        <div class="flow-gate"><div class="gate-dot"></div><div class="gate-label">G1</div></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-phase">
+          <div class="flow-bubble">ARCH</div>
+          <div class="flow-sub">pre-dev</div>
+        </div>
+        <div class="flow-gate"><div class="gate-dot"></div><div class="gate-label">G2</div></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-phase">
+          <div class="flow-bubble">TL</div>
+          <div class="flow-sub">spec</div>
+        </div>
+        <div class="flow-gate"><div class="gate-dot"></div><div class="gate-label">G3</div></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-phase">
+          <div class="flow-bubble">DEV</div>
+          <div class="flow-sub">self-heal ×3</div>
+        </div>
+        <div class="flow-gate"><div class="gate-dot"></div><div class="gate-label">G4</div></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-loop">
+          <div class="flow-loop-label">Evaluator loop · max 2 passes</div>
+          <div class="flow-pair">
+            <div class="flow-bubble">CR</div>
+            <div class="flow-bubble">DEV fixes</div>
+          </div>
+        </div>
+        <div class="flow-gate"><div class="gate-dot"></div><div class="gate-label">G5</div></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-phase">
+          <div class="flow-pair" style="gap:0.4rem">
+            <div class="flow-bubble parallel">ARCH</div>
+            <div class="flow-bubble parallel">QA</div>
+          </div>
+          <div class="flow-sub">parallel</div>
+        </div>
+        <div class="flow-gate"><div class="gate-dot"></div><div class="gate-label">G6·7</div></div>
+        <div class="flow-arrow"></div>
+        <div class="flow-phase">
+          <div class="flow-bubble">Post-Process</div>
+          <div class="flow-sub">corrections</div>
+        </div>
+        <div class="flow-gate"><div class="gate-dot"></div><div class="gate-label">G8</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="section-label">Key Mechanisms</div>
+    <div class="section-title" style="margin-bottom:1rem;">Designed for domains where correctness matters</div>
+    <p class="lead">Seven agent roles. Composable domain skills. A BDD traceability chain from requirement to test.
+      And a self-healing loop that tries to fix its own failures before surfacing them.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-card-label">Self-Heal Loop</div>
+        <h3>DEV fixes its own test failures before escalating</h3>
+        <p>On a red test, the DEV agent reads the stack trace, makes a targeted fix, and re-runs — up to 3
+          iterations. If still failing, Gate 4 surfaces a diagnosed failure with iteration history, not a raw
+          traceback. The loop has hard stops: secrets, scope expansion, or repeated identical fixes bypass it
+          entirely.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-label">Skill Composition</div>
+        <h3>Domain knowledge injected per agent role</h3>
+        <p>Each agent loads composable <code>SKILL.md</code> files: an Azure Function skill enforces
+          <code>_require_env()</code> for secrets, Service Bus error isolation, PII rules, and golden example tests.
+          Skills are separate from role definitions — the same domain skill can compose across multiple agents.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-label">BDD Traceability</div>
+        <h3>From requirement to test, every step linked</h3>
+        <p>PO writes acceptance criteria as Given/When/Then scenarios. TL verifies them for technical completeness.
+          DEV implements step definitions against the same file. CR checks that every AC has a corresponding
+          passing test. A traceability gap at any step is a Gate block.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-label">Context Compaction</div>
+        <h3>DEV reads a brief, not three phases of history</h3>
+        <p>After Gate 3, the context-compactor skill distils the accumulated ticket into a <code>DEV-BRIEF.md</code>
+          — just the file structure, edge cases, fixtures, and reference values DEV needs. The full ticket stays as
+          the audit record. DEV reads the brief. Context noise drops, reliability goes up.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-label">HITL Protocol</div>
+        <h3>Structured checkpoints, not ad-hoc prompts</h3>
+        <p>Every agent emits a standard checkpoint before handoff: ALWAYS SURFACE items, conditional FLAG items,
+          and AUTO-BLOCK conditions with no bypass. The human responds with <code>APPROVE</code>,
+          <code>REJECT: &lt;reason&gt;</code>, or <code>DECIDE: &lt;choice&gt;</code>. Every response is recorded
+          in <code>EVIDENCE.md</code> — the committed human oversight audit trail.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-label">Model Tiering</div>
+        <h3>Judgment roles on strong models, mechanical roles cheap</h3>
+        <p>Agent frontmatter declares a <code>model:</code> tier. ARCH, TL, CR, and QA run on Sonnet
+          (judgment-heavy, cross-cutting decisions). PO and Post-Process run on Haiku (structured formatting,
+          categorisation). Any orchestration layer picks this up automatically — 40–60% cost reduction per ticket
+          run.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELF-IMPROVEMENT LOOP -->
+  <section id="loop">
+    <div class="section-label">The Intelligence Loop</div>
+    <div class="section-title" style="margin-bottom:1rem;">The same mistake cannot repeat without a human deciding to allow it</div>
+    <p class="lead">Post-Process reads self-heal logs, CR findings, and QA results. When two corrections of the same
+      type appear in a sprint, the system proposes a concrete rule addition to the relevant skill file. The human
+      approves the exact text. It gets committed. The loop closes.</p>
+
+    <div class="loop-diagram">
+      <div class="loop-step">
+        <div class="loop-step-n">01</div>
+        <div class="loop-step-content">
+          <div class="loop-step-title">Self-heal log written to ticket MD</div>
+          <div class="loop-step-desc">Each iteration records: error summary, fix applied, result. An exhausted loop
+            adds a root cause assessment before escalating to Gate 4.</div>
+        </div>
+        <span class="loop-step-badge badge-accent">DEV</span>
+      </div>
+      <div class="loop-step">
+        <div class="loop-step-n">02</div>
+        <div class="loop-step-content">
+          <div class="loop-step-title">Post-Process categorises and indexes</div>
+          <div class="loop-step-desc">Reads self-heal logs, REVIEW.md, and QA.md. Writes full detail to the
+            ticket's <code>=== CORRECTIONS ===</code> section. Appends one index row to root
+            <code>CORRECTIONS.md</code> — ID, ticket, sprint, category, agent, status.</div>
+        </div>
+        <span class="loop-step-badge badge-accent">POST</span>
+      </div>
+      <div class="loop-step">
+        <div class="loop-step-n">03</div>
+        <div class="loop-step-content">
+          <div class="loop-step-title">Pattern detection on the compact index</div>
+          <div class="loop-step-desc">Skill-refinement reads only the index — bounded size, fast scan. Filters to
+            open entries in the sprint window. Groups by category + agent. If any group has 2+ entries, threshold
+            is met.</div>
+        </div>
+        <span class="loop-step-badge badge-accent">AUTO</span>
+      </div>
+      <div class="loop-step">
+        <div class="loop-step-n">04</div>
+        <div class="loop-step-content">
+          <div class="loop-step-title">Reads ticket detail only for matched patterns</div>
+          <div class="loop-step-desc">Skill-refinement fetches the <code>=== CORRECTIONS ===</code> section from
+            the 2–3 referenced tickets. Drafts a concrete addition to the relevant SKILL.md — an exact line, not
+            vague guidance.</div>
+        </div>
+        <span class="loop-step-badge badge-accent">AUTO</span>
+      </div>
+      <div class="loop-step loop-feedback">
+        <div class="loop-step-n" style="color:var(--accent)">05</div>
+        <div class="loop-step-content">
+          <div class="loop-step-title">DECIDE checkpoint at Gate 8</div>
+          <div class="loop-step-desc">The human sees the pattern, root cause, proposed exact line, and rationale.
+            APPROVE to commit it, DECIDE to rewrite the wording, REJECT to leave the skill unchanged. Every
+            response is recorded in EVIDENCE.md.</div>
+        </div>
+        <span class="loop-step-badge badge-good">HUMAN</span>
+      </div>
+      <div class="loop-step">
+        <div class="loop-step-n">06</div>
+        <div class="loop-step-content">
+          <div class="loop-step-title">SKILL.md updated and committed</div>
+          <div class="loop-step-desc">The approved rule is applied to the target skill file and committed with a
+            traceable message. Index rows and ticket sections are marked resolved. The same root cause cannot
+            produce another exhausted loop next sprint without a deliberate human decision to skip it.</div>
+        </div>
+        <span class="loop-step-badge badge-good">DONE</span>
+      </div>
+    </div>
+
+    <div class="arch-note">
+      <div class="arch-note-header">Architecture decision — why a compact index, not a flat log</div>
+      <div class="arch-note-body">
+        <div class="arch-col">
+          <div class="arch-col-label">Before</div>
+          <pre><span class="dim">CORRECTIONS.md (root)</span>
+<span class="dim">├─ CORR-001 — full detail</span>
+<span class="dim">├─ CORR-002 — full detail</span>
+<span class="dim">   ... 80 more entries</span>
+<span class="dim">├─ Pattern Analysis table</span>
+<span class="dim">└─ Proposal blocks</span>
+
+<span class="dim">Skill-refinement reads</span>
+<span class="dim">the entire file every run.</span>
+<span class="dim">Merge conflicts on every ticket.</span></pre>
+        </div>
+        <div class="arch-divider"></div>
+        <div class="arch-col">
+          <div class="arch-col-label">After</div>
+          <pre><span class="hl">CORRECTIONS.md (root)</span>
+<span class="hl">│ 6 columns, append-only rows</span>
+<span class="hl">│ no prose, no detail</span>
+
+<span class="dim">tickets/TICKET-007.md</span>
+<span class="dim">│ === CORRECTIONS ===</span>
+<span class="dim">│ full detail, self-heal ref</span>
+<span class="dim">└─ no other ticket can conflict</span>
+
+<span class="hl">Pattern detection reads index.</span>
+<span class="hl">Proposal fetches 2–3 tickets.</span>
+<span class="hl">Scales to any sprint size.</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section id="who">
+    <div class="section-label">Fit</div>
+    <div class="section-title" style="margin-bottom:1rem;">Who it's for</div>
+    <p class="lead">Not every team needs eight gates. This is built for the ones where "the tests pass" isn't the
+      same thing as "this is safe to ship."</p>
+
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-mark">01</div>
+        <div>
+          <h3>Teams shipping AI-authored code in regulated or high-stakes domains</h3>
+          <p>Where a reviewer needs to see why a change is correct, not just that CI is green — and where that
+            reasoning has to be committed somewhere auditable.</p>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-mark">02</div>
+        <div>
+          <h3>Platform / DevEx teams standardizing multi-agent workflows</h3>
+          <p>One skill system and one gate protocol reused across squads, instead of every team hand-rolling its
+            own agent prompts and quality bar.</p>
+        </div>
+      </div>
+      <div class="who-card">
+        <div class="who-mark">03</div>
+        <div>
+          <h3>Anyone tired of the same review comment every sprint</h3>
+          <p>If a correction is worth flagging twice, it's worth writing into the skill file once. The loop is
+            built to make that automatic instead of aspirational.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section id="comparison">
+    <div class="section-label">Comparison</div>
+    <div class="section-title" style="margin-bottom:1.5rem;">Where Agentic Core fits</div>
+
+    <div class="cmp-table-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>CrewAI / AutoGen</th>
+            <th>Linear AI</th>
+            <th class="hl">Agentic Core</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Programmatic execution engine</td>
+            <td class="cmp-yes">✓ Python runtime</td>
+            <td class="cmp-part">partial (ticket UI)</td>
+            <td class="hl cmp-part">runbook (Workflow script: WIP)</td>
+          </tr>
+          <tr>
+            <td>Structured HITL checkpoints</td>
+            <td class="cmp-no">✗ DIY</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="hl cmp-yes">✓ 8-gate APPROVE/REJECT/DECIDE</td>
+          </tr>
+          <tr>
+            <td>Human oversight audit trail</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="hl cmp-yes">✓ EVIDENCE.md, committed</td>
+          </tr>
+          <tr>
+            <td>Composable domain skill system</td>
+            <td class="cmp-no">✗ DIY system prompts</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="hl cmp-yes">✓ SKILL.md per role + domain</td>
+          </tr>
+          <tr>
+            <td>Self-healing on test failure</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="hl cmp-yes">✓ 3-iter loop with structured log</td>
+          </tr>
+          <tr>
+            <td>Correction feedback loop</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="hl cmp-yes">✓ index → pattern → SKILL.md</td>
+          </tr>
+          <tr>
+            <td>BDD requirement traceability</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="cmp-part">partial (ticket links)</td>
+            <td class="hl cmp-yes">✓ AC → feature → step → CR check</td>
+          </tr>
+          <tr>
+            <td>Rubric-based quality evaluation</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="hl cmp-yes">✓ role-specific rubrics, 140 scenarios</td>
+          </tr>
+          <tr>
+            <td>Model tiering per agent role</td>
+            <td class="cmp-part">manual per agent</td>
+            <td class="cmp-no">✗ none</td>
+            <td class="hl cmp-yes">✓ declared in agent frontmatter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section" style="max-width:900px; margin:0 auto; padding:4rem 2rem 5rem; display:flex; flex-direction:column; gap:1.5rem;">
+    <div class="section-title" style="margin-bottom:0;">Built for teams who need to prove the output is correct.</div>
+    <p class="lead">Agentic Core is open source. The governance layer, skill definitions, and correction pipeline
+      are all in the repo — composable with any LLM execution runtime.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="https://github.com/haggarty15/agentic-core" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+      <a href="projects.html" class="btn btn-outline">Back to Projects</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Kyle Haggarty · <a href="https://haggarty.dev">haggarty.dev</a></span>
+      <span>Agentic Core · MIT Licence</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>
