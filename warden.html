@@ -38,8 +38,9 @@
       skills, and a self-improving correction loop that stops the same mistake from repeating across sprints.
     </p>
     <div class="hero-actions">
-      <a href="https://github.com/haggarty15/wardenai" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
       <a href="#how-it-works" class="btn btn-outline">See how it works</a>
+      <span class="badge-private">🔒 Private repository</span>
     </div>
     <div class="skills-list" style="margin-top:2rem;">
       <span class="skill-tag tag-product">Human-in-the-Loop</span>
@@ -66,7 +67,7 @@
       </div>
       <div class="value-card">
         <div class="value-stat">2+ per sprint</div>
-        <h3>The same mistake can't repeat</h3>
+        <h3>Recurring mistakes become rules</h3>
         <p>Two recurring corrections in a sprint become a proposed <code>SKILL.md</code> rule before the next ticket runs.</p>
       </div>
       <div class="value-card">
@@ -75,9 +76,9 @@
         <p>Composable <code>SKILL.md</code> files carry the rules — not tribal knowledge stuck in one person's head.</p>
       </div>
       <div class="value-card">
-        <div class="value-stat">40–60% cheaper</div>
+        <div class="value-stat">sized to the task</div>
         <h3>Judgment where it counts</h3>
-        <p>Model tiering runs mechanical roles on Haiku and judgment roles on Sonnet, without touching decision quality.</p>
+        <p>Mechanical roles run on cheaper, faster models; judgment-heavy roles run on the stronger one — not a blanket top-tier default.</p>
       </div>
     </div>
   </section>
@@ -86,37 +87,14 @@
   <section id="problem">
     <div class="section-label">The Problem</div>
     <div class="section-title" style="margin-bottom:1rem;">Frameworks give you orchestration. Nobody gives you correctness.</div>
-    <p class="lead">CrewAI and AutoGen solve a real problem: how do multiple AI agents hand work between each other?
-      But they stop there. Everything else — quality gates, domain knowledge, human oversight, and correction loops
-      — is your problem.</p>
-
-    <div class="gap-grid">
-      <div class="gap-cell have">
-        <div class="gap-cell-label have">What they give you</div>
-        <h3>CrewAI / AutoGen</h3>
-        <ul class="gap-list">
-          <li>Agent-to-agent message passing</li>
-          <li>Sequential and parallel task execution</li>
-          <li>Tool use and memory primitives</li>
-          <li>Python runtime, SDK integrations</li>
-        </ul>
-      </div>
-      <div class="gap-cell missing">
-        <div class="gap-cell-label missing">What they leave out</div>
-        <h3>The governance gap</h3>
-        <ul class="gap-list">
-          <li>Quality gates and rubric evaluation</li>
-          <li>Structured human-in-the-loop checkpoints</li>
-          <li>Domain skill composition per agent role</li>
-          <li>Correction feedback into agent behaviour</li>
-          <li>Evidence trail for human oversight audit</li>
-        </ul>
-      </div>
-    </div>
+    <p class="lead">Multi-agent frameworks solve agent-to-agent handoffs. They don't solve what happens around
+      those handoffs — quality gates, domain knowledge, human oversight, and a way to stop the same mistake
+      from happening twice.</p>
 
     <div class="thesis-box">
-      <strong>WardenAI is the governance layer that sits on top of any execution runtime</strong> — it defines
-      what each agent should know, when the human must intervene, and how failures feed back to prevent recurrence.
+      <strong>Orchestration frameworks provide the agent-to-agent plumbing. WardenAI adds the governance layer on
+      top</strong> — quality gates, structured human checkpoints, and a correction loop that turns a repeated
+      mistake into a reviewable rule. It defines what each agent should know and when a human must intervene.
       The execution engine (Claude Code, Gemini, any LLM) is pluggable.
     </div>
   </section>
@@ -232,8 +210,8 @@
         <h3>Judgment roles on strong models, mechanical roles cheap</h3>
         <p>Agent frontmatter declares a <code>model:</code> tier. ARCH, TL, CR, and QA run on Sonnet
           (judgment-heavy, cross-cutting decisions). PO and Post-Process run on Haiku (structured formatting,
-          categorisation). Any orchestration layer picks this up automatically — 40–60% cost reduction per ticket
-          run.</p>
+          categorisation). Any orchestration layer picks this up automatically, so spend scales with how much
+          judgment a step actually needs.</p>
       </div>
     </div>
   </section>
@@ -241,7 +219,7 @@
   <!-- SELF-IMPROVEMENT LOOP -->
   <section id="loop">
     <div class="section-label">The Intelligence Loop</div>
-    <div class="section-title" style="margin-bottom:1rem;">The same mistake cannot repeat without a human deciding to allow it</div>
+    <div class="section-title" style="margin-bottom:1rem;">Recurring mistakes become rules, not repeat incidents</div>
     <p class="lead">Post-Process reads self-heal logs, CR findings, and QA results. When two corrections of the same
       type appear in a sprint, the system proposes a concrete rule addition to the relevant skill file. The human
       approves the exact text. It gets committed. The loop closes.</p>
@@ -379,96 +357,22 @@
     </div>
   </section>
 
-  <!-- COMPARISON TABLE -->
-  <section id="comparison">
-    <div class="section-label">Comparison</div>
-    <div class="section-title" style="margin-bottom:1.5rem;">Where WardenAI fits</div>
-
-    <div class="cmp-table-wrap">
-      <table class="cmp-table">
-        <thead>
-          <tr>
-            <th>Capability</th>
-            <th>CrewAI / AutoGen</th>
-            <th>Linear AI</th>
-            <th class="hl">WardenAI</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Programmatic execution engine</td>
-            <td class="cmp-yes">✓ Python runtime</td>
-            <td class="cmp-part">partial (ticket UI)</td>
-            <td class="hl cmp-part">runbook (Workflow script: WIP)</td>
-          </tr>
-          <tr>
-            <td>Structured HITL checkpoints</td>
-            <td class="cmp-no">✗ DIY</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="hl cmp-yes">✓ 8-gate APPROVE/REJECT/DECIDE</td>
-          </tr>
-          <tr>
-            <td>Human oversight audit trail</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="hl cmp-yes">✓ EVIDENCE.md, committed</td>
-          </tr>
-          <tr>
-            <td>Composable domain skill system</td>
-            <td class="cmp-no">✗ DIY system prompts</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="hl cmp-yes">✓ SKILL.md per role + domain</td>
-          </tr>
-          <tr>
-            <td>Self-healing on test failure</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="hl cmp-yes">✓ 3-iter loop with structured log</td>
-          </tr>
-          <tr>
-            <td>Correction feedback loop</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="hl cmp-yes">✓ index → pattern → SKILL.md</td>
-          </tr>
-          <tr>
-            <td>BDD requirement traceability</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="cmp-part">partial (ticket links)</td>
-            <td class="hl cmp-yes">✓ AC → feature → step → CR check</td>
-          </tr>
-          <tr>
-            <td>Rubric-based quality evaluation</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="hl cmp-yes">✓ role-specific rubrics, 144 scenarios</td>
-          </tr>
-          <tr>
-            <td>Model tiering per agent role</td>
-            <td class="cmp-part">manual per agent</td>
-            <td class="cmp-no">✗ none</td>
-            <td class="hl cmp-yes">✓ declared in agent frontmatter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
   <!-- CTA -->
   <div class="cta-section" style="max-width:900px; margin:0 auto; padding:4rem 2rem 5rem; display:flex; flex-direction:column; gap:1.5rem;">
     <div class="section-title" style="margin-bottom:0;">Built for teams who need to prove the output is correct.</div>
-    <p class="lead">WardenAI is open source. The governance layer, skill definitions, and correction pipeline
-      are all in the repo — composable with any LLM execution runtime.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="https://github.com/haggarty15/wardenai" target="_blank" rel="noopener" class="btn btn-primary">View on GitHub →</a>
+    <p class="lead">WardenAI is a private, proprietary system. Get in touch for a technical walkthrough of the
+      governance layer, skill definitions, and correction pipeline.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
       <a href="projects.html" class="btn btn-outline">Back to Projects</a>
+      <span class="badge-private">🔒 Private repository</span>
     </div>
   </div>
 
   <footer>
     <div class="footer-inner">
       <span>© 2026 Kyle Haggarty · <a href="https://haggarty.dev">haggarty.dev</a></span>
-      <span>WardenAI · MIT Licence</span>
+      <span>WardenAI · Proprietary</span>
     </div>
   </footer>
 
