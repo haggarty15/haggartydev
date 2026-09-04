@@ -42,6 +42,11 @@
       <a href="#how-it-works" class="btn btn-outline">See how it works</a>
       <span class="badge-private">🔒 Private repository</span>
     </div>
+    <div class="trust-row">
+      <span>Human sign-off on every gate</span>
+      <span>Full EVIDENCE.md audit trail</span>
+      <span>Pluggable execution engine</span>
+    </div>
     <div class="skills-list" style="margin-top:2rem;">
       <span class="skill-tag tag-product">Human-in-the-Loop</span>
       <span class="skill-tag tag-ai">Multi-agent SDLC</span>
@@ -85,7 +90,7 @@
 
   <!-- PROBLEM -->
   <section id="problem">
-    <div class="section-label">The Problem</div>
+    <div class="section-label">01 / The Problem</div>
     <div class="section-title" style="margin-bottom:1rem;">Frameworks give you orchestration. Nobody gives you correctness.</div>
     <p class="lead">Multi-agent frameworks solve agent-to-agent handoffs. They don't solve what happens around
       those handoffs — quality gates, domain knowledge, human oversight, and a way to stop the same mistake
@@ -101,7 +106,7 @@
 
   <!-- FLOW -->
   <section id="how-it-works">
-    <div class="section-label">How It Works</div>
+    <div class="section-label">02 / How It Works</div>
     <div class="section-title" style="margin-bottom:1rem;">Eight gates. Every handoff is a checkpoint.</div>
     <p class="lead">Agents don't pass work directly to each other. Every phase produces output, emits a structured
       checkpoint, and waits for a human APPROVE / REJECT / DECIDE before the next phase runs. The human acts at
@@ -162,10 +167,42 @@
 
   <!-- FEATURES -->
   <section id="features">
-    <div class="section-label">Key Mechanisms</div>
+    <div class="section-label">03 / Key Mechanisms</div>
     <div class="section-title" style="margin-bottom:1rem;">Designed for domains where correctness matters</div>
     <p class="lead">Seven agent roles. Composable domain skills. A BDD traceability chain from requirement to test.
       And a self-healing loop that tries to fix its own failures before surfacing them.</p>
+
+    <div class="agent-connector"></div>
+    <div class="agent-row">
+      <div class="agent-node">
+        <div class="agent-node-icon">📋</div>
+        <div class="agent-node-label">Product Owner</div>
+      </div>
+      <div class="agent-node">
+        <div class="agent-node-icon">🏛️</div>
+        <div class="agent-node-label">Architect</div>
+      </div>
+      <div class="agent-node">
+        <div class="agent-node-icon">🧭</div>
+        <div class="agent-node-label">Tech Lead</div>
+      </div>
+      <div class="agent-node">
+        <div class="agent-node-icon">🛠️</div>
+        <div class="agent-node-label">Developer</div>
+      </div>
+      <div class="agent-node">
+        <div class="agent-node-icon">🔍</div>
+        <div class="agent-node-label">Code Reviewer</div>
+      </div>
+      <div class="agent-node">
+        <div class="agent-node-icon">✅</div>
+        <div class="agent-node-label">QA</div>
+      </div>
+      <div class="agent-node">
+        <div class="agent-node-icon">🔁</div>
+        <div class="agent-node-label">Post-Process</div>
+      </div>
+    </div>
 
     <div class="feature-grid">
       <div class="feature-card">
@@ -218,7 +255,7 @@
 
   <!-- SELF-IMPROVEMENT LOOP -->
   <section id="loop">
-    <div class="section-label">The Intelligence Loop</div>
+    <div class="section-label">04 / The Intelligence Loop</div>
     <div class="section-title" style="margin-bottom:1rem;">Recurring mistakes become rules, not repeat incidents</div>
     <p class="lead">Post-Process reads self-heal logs, CR findings, and QA results. When two corrections of the same
       type appear in a sprint, the system proposes a concrete rule addition to the relevant skill file. The human
@@ -286,6 +323,39 @@
       </div>
     </div>
 
+    <div class="mockup-card">
+      <div class="mockup-header">
+        <div class="mockup-dots"><span></span><span></span><span></span></div>
+        <div class="mockup-header-label">TICKET-142 · Gate 8</div>
+      </div>
+      <div class="mockup-body">
+        <div class="mockup-alert">
+          <span class="mockup-alert-icon">⚠</span>
+          <div>
+            <div class="mockup-alert-title">Pattern detected</div>
+            <div class="mockup-alert-sub">2 corrections this sprint · category: null-check · agent: DEV</div>
+          </div>
+        </div>
+        <div>
+          <div class="mockup-list-label">What was found</div>
+          <ul class="mockup-list">
+            <li>TICKET-138: unhandled null on optional API field</li>
+            <li>TICKET-142: same failure mode, different endpoint</li>
+          </ul>
+        </div>
+        <div class="mockup-proposed">
+          <div class="mockup-list-label">Proposed rule — development/SKILL.md</div>
+          <code>Always guard optional API response fields with a null check before property access.</code>
+        </div>
+        <div class="mockup-actions">
+          <button class="mockup-btn primary">APPROVE</button>
+          <button class="mockup-btn">DECIDE</button>
+          <button class="mockup-btn">REJECT</button>
+        </div>
+        <div class="mockup-note">Every response recorded to EVIDENCE.md</div>
+      </div>
+    </div>
+
     <div class="arch-note">
       <div class="arch-note-header">Architecture decision — why a compact index, not a flat log</div>
       <div class="arch-note-body">
@@ -324,7 +394,7 @@
 
   <!-- WHO IT'S FOR -->
   <section id="who">
-    <div class="section-label">Fit</div>
+    <div class="section-label">05 / Who It's For</div>
     <div class="section-title" style="margin-bottom:1rem;">Who it's for</div>
     <p class="lead">Not every team needs eight gates. This is built for the ones where "the tests pass" isn't the
       same thing as "this is safe to ship."</p>
