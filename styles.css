@@ -821,3 +821,96 @@ code {
 @media (max-width: 480px) {
   .value-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== BLOG ===== */
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted-2);
+}
+.post-meta-row .dot { color: var(--border); }
+
+.post-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+}
+.post-card-title a { color: inherit; }
+.post-card-title a:hover { color: var(--accent); }
+
+.post-empty-note {
+  color: var(--muted-2);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* -- long-form post body -- */
+.post-hero .post-meta-row { margin-bottom: 1rem; }
+
+.post-body {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.post-body > * + * { margin-top: 1.4rem; }
+.post-body p {
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+.post-body h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 2.75rem;
+  color: var(--text);
+}
+.post-body h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: var(--text);
+}
+.post-body ul, .post-body ol {
+  padding-left: 1.4rem;
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+.post-body li { margin-bottom: 0.5rem; }
+.post-body li::marker { color: var(--accent); }
+.post-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+.post-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.post-body pre code { background: none; border: none; padding: 0; }
+.post-body hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+.post-body a { text-decoration: underline; text-underline-offset: 2px; }
+.post-body strong { color: var(--text); font-weight: 600; }
+
+.post-footer {
+  max-width: 680px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
